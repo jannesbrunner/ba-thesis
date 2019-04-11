@@ -1,0 +1,282 @@
+\documentclass[12pt,a4paper,bibtotoc,pointlessnumbers]{scrartcl}
+\usepackage[ngerman]{babel}
+%\usepackage[german]{polyglossia}
+%\selectlanguage{german}
+% ##########################################
+% PDFLaTeX oder nicht:
+\newif \ifPDF                                   
+\ifx \pdfoutput \undifined \PDFfalse 
+\else \ifnum \pdfoutput >0 \PDFtrue
+     \else \PDFfalse         
+     \fi     
+\fi 
+% ##########################################
+\usepackage{lmodern} %ersetzt Standarsschrift --> für schönere Textdarstellung im PDF
+\usepackage[onehalfspacing]{setspace} %setzt das Dokument in 1,5-fachem Zeilenabstand
+\setlength\parindent{0pt}% Setzt den Einzug nach einem Absatz fest (hier auf Null)
+\usepackage{microtype}
+
+%\usepackage{csquotes}
+%\usepackage[style=acm]{biblatex}
+%\addbibresource{Literaur.bib}
+\usepackage{bibgerm}
+%\usepackage{natbib}
+
+\usepackage[
+backend=biber,
+style=numeric,
+%-verb
+sorting=none
+]{biblatex}
+\addbibresource{BA-JannesBrunner.bib}
+%\addbibresource{Bildquellen.bib}
+%%\bibliography{Masterarbeit.bib}
+%\usepackage{cite}
+
+
+\usepackage[T1]{fontenc} %für europäischen ASCII-Code (mit Umlauten etc)
+\usepackage[utf8]{inputenc} %Legt den Zeichencode fest
+
+\usepackage[babel, german=quotes]{csquotes}
+
+\usepackage[dvips]{graphicx} %damit Bilder eingebunden werden Können
+\usepackage{fancyhdr} %Nachfolger zu "fancyheadings" --> legt Layout der Seite fest + hält zusätzliche Befehle und Optionen bereit
+
+%\usepackage[headsepline]{scrlayer-scrpage}
+%\automark[section]{subsection}
+
+\usepackage{float} %Objekte, die nicht auf zwei Seiten aufgeteilt werden sollen (z.B. Bilder, Tabellen)
+\usepackage{floatflt} %wird für die Umgebung floatfigure benötigt --> Bild kann von text umflossen werden
+\usepackage[section]{placeins} %section verhindert, dass Bilder aus section hinausgleiten
+
+\usepackage{amsmath} %für Matheumgebung
+\usepackage{amssymb} %Setzt Befehle für Symbole in Symbole um 
+\usepackage{amsfonts} %Zusätzliche Schriften und Symbole
+\usepackage{exscale} %stellt Befehle für Änderung der Schrift bereit
+\usepackage{textcomp}
+\usepackage{easymat} % weitere Befehle für Matrizen
+\usepackage{enumitem} % Ändern von Listenumgebungen
+%\usepackage{paralist}
+
+\usepackage{pdfpages}%erlaubt das einbinden von anderen PDF-Dokumenten (auch einzelnen Seiten) in das Latex-Dokument
+
+\usepackage{etex} %erhöht die Anzahl der Pakete, die geladen werden können
+
+\usepackage[font=small,labelfont=bf,hang]{caption} %für Bild- und Tabellenunterschriften
+\addto\captionsngerman
+{
+	\renewcommand{\figurename}{\small{\textbf{Abb.}}}
+	\captionsetup{figurewithin = section}
+}
+\addto\captionsngerman{
+	\renewcommand{\tablename}{\small{Tab.}}}
+\captionsetup{tablewithin = section}
+\captionsetup{font=small, labelfont=bf}
+
+%\usepackage{subfig}
+\usepackage{subcaption}
+\usepackage{longtable}% erlaubt Tabellen über mehrere Seiten
+\usepackage{tabularx} %Tabellen können größer gemacht werden und und die Spalten sind flexibler
+\usepackage{booktabs} %definiert Befehle für Tabellen
+%\usepackage{booktabs-de}
+\usepackage{ltxtable} %vereinigt longtable und tabularx
+\usepackage{colortbl}
+\usepackage{multirow}
+%\usepackage{multicolumn}
+\usepackage{rotating}
+%\usepackage{tablefootnote}
+
+%\usepackage{tikz}
+
+\usepackage{array} %erweiterte Möglichkeiten für Tabellen und Spalten
+%\usepackage{subfigure}
+\usepackage{url} %lange Zeichenfolgen können trotz fehlender Leerzeichen getrennt werden
+%\usepackage{paralist}
+% ##########################################
+
+% ##########################################
+% Seitendesign:
+\usepackage{units}
+\usepackage[headheight=50pt, a4paper, bottom=25mm, footskip=6mm]{geometry} %wird für Layout des Dokuments benötigt
+\geometry{verbose}
+% ##########################################
+%\usepackage{cite} % fasst Zitate zusammen (funktioniert nur ohne hyperref)
+
+\ifPDF
+\usepackage{xcolor}   %ermöglicht das Ändern der Farbe von Schrift, Seitenhintergrund, Boxen etc
+\usepackage[
+  pdftex,
+  colorlinks,
+  citecolor = {green},
+  linkcolor = {black},
+  urlcolor  = {gray},                
+  bookmarks         = true,
+  bookmarksopen     = true, % Bookmarks anzeigen...
+  bookmarksnumbered = true, % ...und numerieren
+  pdftitle          = {Masterarbeit},
+  pdfauthor         = {Nanin Brunner}
+]{hyperref} %ermöglicht Links im PDF-Dokument (z.B. ancklicken eines Kapitel im Inhaltsverzeichnis oder Verlinkung mit externem Link)
+
+
+\else
+\usepackage{wrapfig}
+%\usepackage{floatflt} %ermöglicht Gleitobjekte (Bilder, Tabellen) von Text umfließen zu lassen und Bilder links/recht je nach Seitenzahl auszurichten
+\fi%-----------------------------------------------------------------------------
+% Definition für einen neuen Befehl für deutsche Anführungszeichen
+\newcommand{\gqq}[1]{\glqq{}#1\grqq{}}
+\newcommand{\gq}[1]{\glq{}#1\grq{}}
+
+
+\begin{document}
+	\begin{titlepage}
+		\begin{center}
+%				\begin{figure}[h]
+%					\begin{minipage}{.4\textwidth}
+%						\centering
+%						\includegraphics[width=0.5\textwidth]{Bilder/Logo_Wildau}
+%					\end{minipage}
+%					\begin{minipage}{.2\textwidth}
+%						\hspace{\textwidth}
+%					\end{minipage}
+%					\begin{minipage}{.4\textwidth}
+%						\centering
+%						\includegraphics[width=0.4\textwidth]{Bilder/bam_logo_135}
+%					\end{minipage}
+%				\end{figure}			
+%				\vspace{0.4cm}
+			
+%			{\large \bf Bundesanstalt für Materialforschung und -prüfung }\\[4mm]
+%			{\large\bf TH Wildau}
+			%\vspace{0.5cm} \hrule \vspace{1.3cm}
+			
+			 
+			\begin{doublespace}
+			{\huge Titel der Arbeit}\\
+			\end{doublespace}
+			\vspace{2cm}
+			
+			{\huge \bf Bachelorarbeit}\\
+			\vspace{0.4cm}
+			
+			{\large zur Erlangung des akademischen Grades\\ Master\\ (M.-Eng.)\\an der Technischen Hochschule Wildau}\\
+			
+			\vspace{1cm}
+			
+			{\Large \bf Technische Hochschule Wildau}\\
+			{\large \bf Fachbereich Ingenieur- und Naturwissenschaften\\
+			Studiengang Photonik}\\
+		
+			\vspace{1.5cm}
+			
+			{\doublespacing Eingereicht von\\
+			{\Large \bf Marie Nanine Brunner}\\ geb. 13.08.1983}
+			
+%			\vspace{1cm}
+		
+			\large
+			\begin{table}[b]
+				\begin{center}
+					\begin{tabular}{ll}
+					Eingereicht am:& 10.03.2019\\
+					Betreuender Hochschuldozent:& Prof. Dr. sc. nat. Klaus-Peter Möllmann\\
+					Themenstellende Einrichtung:& Bundesanstalt für Materialforschung und -prüfung\\
+					Zweitgutachter: & Dipl.-Physiker Gerd Wilsch (BAM)\\
+					\end{tabular}
+				\end{center}
+			\end{table} 
+		\end{center}
+		\vspace{0.6cm}
+	%	{\bf Abstract}: Das Abstract
+\end{titlepage}
+
+\newpage
+%\clearpairofpagestyles
+
+
+
+
+%\clearpairofpagestyles
+
+\pagenumbering{roman}
+\setcounter{page}{10}
+
+
+%\thispagestyle{empty}
+\cfoot{\pagemark}
+\tableofcontents 
+\newpage
+
+\pagenumbering{arabic}
+
+
+
+
+%\pagestyle{scrheadings}
+%\ihead{\leftmark}
+%%\automark{section}
+%\chead{\rightmark}
+%%\automark{subsection}
+%\ohead{\thepage}
+
+
+\pagestyle{fancy}
+\fancyhf{}
+%\setlength{\headheight}{15pt}
+\renewcommand{\headrulewidth}{0.4pt} %definiert die Dicke der Linie unter der Kopfzeile
+%\renewcommand{\footrulewidth}{0pt} %definiert die Dicke der Linie über der Fußzeile
+\renewcommand{\sectionmark}[1]{%
+	\markboth{\thesection.\ #1}{}} %sorgt dafüpr, dass die Kapitel und Unterkapitel in der Kopfzeile stehen
+
+
+%\addtolength{\headwidth}{\marginparwidth}
+%\setlength{\fancyhead}{0.4\headrulewidth}
+\fancyhead[L]{\textsl{\small 
+%		\leftmark \hspace{0.8cm}
+		\rightmark}}
+%\fancyhead[C]{\parbox{0.5\textwidth}{\textsl{\small \rightmark}}}
+\fancyhead[R]{\textsl{\small \thepage}}
+%\fancyhead[L]{\parbox{0.3\textwidth}{\textsl{\small \leftmark}}}
+%\fancyhead[C]{\parbox{0.6\textwidth}{\textsl{\small \rightmark}}}
+%\fancyhead[R]{\parbox{0.05\textwidth}{\textsl{\small \thepage}}}
+%\addtolength{\headwidth}{\marginparsep}
+%\fancyfoot[C]{\thepage}
+
+
+\input{sections/00Begriffe}
+\newpage
+
+\input{sections/test}
+
+
+
+%\fancyhead[L]{\textsl{\small \leftmark}}
+%\input{sections/07Zusammenfassung.tex}%\newpage
+%\input{sections/08Ausblick.tex}\newpage
+
+%\addcontentsline{toc}{section}{Literaturverzeichnis}
+%\printbibliography[nottype=online, title={Literaturverzeichnis}]
+%\printbibliography[type=online,title={Online - Bildquellen}]\newpage
+
+\printbibliography[title={Literaturverzeichnis}]
+\newpage
+
+
+\addcontentsline{toc}{section}{Abbildungsverzeichnis}
+\listoffigures\newpage
+\addcontentsline{toc}{section}{Tabellenverzeichnis}
+\listoftables
+
+%\clearpage%\vspace*{-3cm}
+%\newpage
+
+\addcontentsline{toc}{part}{Anhang}
+
+\fancyhead[L]{\textsl{\small \leftmark \hspace{0.8cm}\rightmark}}
+
+%\appendix % Für Anhänge
+%\input{anhang/Zemente}
+%\input{anhang/Nachmessung_Zemente}
+
+
+
+\end{document}
