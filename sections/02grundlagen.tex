@@ -7,13 +7,31 @@
 \subsection{Überblick Webtechnologie}\label{sec:webbasedsoftware}
 % Hier auf PDF Technische Anforderungen verweisen (Footnote?) da sehr ausführlich und gut
 % Anfang Geschichtlich
+Diese Sektion soll einen grundlegenden Überblick über Webtechnologien und im Kontext dieser Arbeit wichtigen Begrifflichkeiten bieten. 
 
 \subsubsection{Intranet und Internet}\label{sec:intranetundinternet}
 % Unterschied und Gemeinsamkeit klar machen
 % Hier kommunikation erklären! Protokolle und OSI schicht!
+Einfach ausgedrückt, ist das Internet ein Netzwerk von Computern, welche weltweit miteinander vernetzt sind. Seine Anfänge lassen sich auf das Ende der 1960er in den USA datieren, als die DARPA (Defense Advanced Research Projects Agency) eine weltweite Verknüpfung von Datennetzen anstrebte. Das hier draus resultierende ARPANET (Advanced Research Projects) kann als Ursprung angesehen werden. Dabei beschreibt der Begriff Internet streng genommen ein 'interconnected network', also ein international vernetztes Netzwerk, ohne dabei die Hardware- und Netzwerktechnologie genauer zu beschreiben \cite{safran2011webtechnologien}.  \\ 
+Der wohl populärste Anwendung des Internets ist das World Wide Web, welche gegen Jahr 1989 von einer Forschungsgruppe rund um Sir Tim Berners-Lee ins Leben gerufen wurde und heute oftmals als Synonym für das gesamte Internet sprachlich genutzt wird. \\ 
+
+In unser heutigen globalisierten Welt lässt sich das Internet mitsamt World Wide Web nicht mehr wegdenken und ist ein integraler Bestandteil der Informationskultur. 
+ \\ \\
+ Das Intranet beschreibt einen lokal abgeschlossenes Netzwerk von Computern, beispielsweise innerhalb eines Unternehmens. Dabei endet ein Intranet klar an seinen Grenzen und ein Gateway fungiert als Übergabepunkt ins Internet. Die Vernetzung der Endgeräte erfolgt kabelgebunden (LAN) oder kabellos (WLAN). Die Kommunikationsgeschwindigkeit innerhalb eines Intranets sind i.d.R. deutlich höher als im Internet, da Daten nicht erst nach außen an einen Internet Service Provider übermittelt werden müssen. Ein Intranet funktioniert unabhängig vom öffentlichem Internet (erhöhte Ausfallsicherheit), ist nicht öffentlich zugänglich (realisierbar, falls gewünscht) und bietet oft andere oder zusätzliche Funktionen neben dem Internet \cite{Intranet62:online}. 
+ 
+ \subsubsection{Client-Server Modell}\label{sec:clientservermodell}
+ Das Client-Server Modell beschreibt das Prinzip der Kommunikation zwischen zwei Teilnehmer innerhalb eines Netzwerks. Grundlegend unterscheidet das Modell hierbei zwischen einer Anbieterseite (Server) und einer Benutzerseite (Client). Der Client betreibt auf seinem Endgerät (Computer, Smartphone, etc.) eine Clientsoftware mit der die Verbindung zum Server aufgebaut wird. Im Fall des WWW (siehe \ref{sec:www}) ist dies in den meisten Anwendungsszenarien ein Webbrowser. Der Client fordert dabei eine Resource an, welche auf dem Server vorliegt oder dort speziell für die Anfrage des Clients generiert wird. Das Client-Server Modell sieht vor, dass immer der Client die Verbindung aufbaut, nie andersherum \cite{ElektronikKompendium.de}. Die Anfrage des Clients wird Request genannt, die Antwort des Servers Response oder Reply, welche bei ausreichender Berechtigung des Clients auch Daten enthält. 
+ Server-Computer sollen rund um die Uhr erreichbar sein, während Client-Endgeräte auch abgeschaltet werden können, ohne die Integrität des Netzwerks zu beeinflussen. 
+  % Vergleich zu anderen Modellen?
+ 
 \subsubsection{Kommunikation}\label{sec:kommunikation}
-\subsubsection{Client-Server Modell}\label{sec:clientservermodell}
-% Vergleich zu anderen Modellen?
+Die Kommunikation im Internet und Intranet erfolgt über Protokolle. 
+Ein Protokoll kann als ein Satz von Kommunikationsregelvorschriften verstanden werden \cite{safran2011webtechnologien}, welche den Netzwerkverkehr auf unterschiedlichen Schichten reglementieren. 
+Diese Schichten werden im OSI-Modell (Open System Interconnection) der ISO (International Standardization Organisation), der internationalen Standardisierungsorganisation beschrieben. (Siehe Tabelle) %HIER TABELLE!
+\\ 
+Das OSI-Modell ist dabei in sieben Schichten eingeteilt, während die Erste als  physikalische Schicht definiert ist und die Siebte als Anwendungsschicht. Die Idee dabei ist, dass Protokolle jeweils nur über Protokolle benachbarter Schichten in Kenntnis gesetzt sein müssen. Das OSI-Modell lässt sich grob in anwendungsorientierte Schichten ( 1 bis 4) und transportorientierte Schichten (5 bis 7) unterteilen. Die im Rahmen dieser Arbeit genutzten Webtechnologien nutzen nur Anwendungsorientierte Schichten.
+
+
 
 % Begriff Internet
 \subsubsection{World Wide Web}\label{sec:www}
