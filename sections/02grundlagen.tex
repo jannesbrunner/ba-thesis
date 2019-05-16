@@ -54,6 +54,9 @@ Bei der Implementierung eines Webservices bieten sich folgende zwei technologisc
  
 \textbf{REST}: (Representational State Tranfer) Hier kann jede einzelne Funktion des Webservices über eine jeweils zugeordnete URL abgerufen (Uniform Resource Locator) werden, umgangssprachlich als Webadresse bekannt. Das WWW selbst kann als REST-Webservice verstanden werden \cite{Bayer2002:online}. \\ 
 
+\subsection{Websockets}\label{sec:websockets}
+Bezugnehmend auf die Problematik, welche durch die Kommunikationsstrategie über das http-Protokoll entsteht (siehe Sektion \ref{sec:www}), wirken Websockets dieser entgegen. Als Kommunikationskanal verknüpft ein Websocket Server und Client. Zwar muss die Kommunikation zunächst über den Client initiiert werden, bleibt dann jedoch bestehen und der Server kann diese nutzen um aktiv neue Daten zu emittieren. Ein Nachteil ist jedoch, dass im Gegensatz zum http-Protokoll hier auch Daten hin- und hergeschickt werden, wenn dies eventuell nicht gewünscht ist \cite{neumann2015entwicklung}, was insbesondere bei mobilen Applikationen kritisch sein kann. 
+
 \subsection{Webapplikationsentwicklung}\label{sec:softwareentwicklung}
 Dieses Kapitel soll den wesentlicheren Bestandteil dieser Arbeit grundlegend beleuchten, der Entwicklung von Webapplikationen.
 Webanwendungen und Webservices können unter diesem Begriff zusammengefasst werden.
@@ -113,6 +116,29 @@ Es gibt sehr viele JavaScript WAFs und Bibliotheken, zu den bekanntesten zählen
 
 %Hier vor allem über Javascript quatschen!
 \subsubsection{Hardware Anforderungen}\label{sec:hardware}
-\subsubsection{Vergleich zu anderen Ansätzen}\label{sec:vorundnachteileweb}
+Auf der \textbf{Serverseite} ist der Anspruch an die Hardware sehr abhängig vom gewünschten Anwendungsfall und benötigter Skalierbarkeit. Das beliebte Server Linux Derivat Debian benötigt bspw. mindestens 128 Megabyte Ram-Speicher und 2 Gigabyte Festplattenspeicher. Es ist aber durchaus möglich mit noch sehr viel weniger potenter Hardware ein Server zu betreiben \cite{dpakt2019:online}. 
+\subsubsection{Vergleich zu anderen Entwicklungsansätzen}\label{sec:vorundnachteileweb}
+Der klassische Ansatz der Software Entwicklung wäre das implementieren eine Desktop-Anwendung, welche lokal
+auf dem Computer des Anwendenden installiert wird. Typischerweise wird die Software programmiert und anschließend von einem Compiler in Maschinencode übersetzt bzw. von einer Laufzeitumgebung zur Ausführung interpretiert. Die Software wird also normalerweise auf dem Computer installiert und an die Gegebenheiten des Betriebssystems angepasst. Dies hat den Vorteil bei Bedarf sehr hardwarenah und performant entwickeln zu können, was durch das vorherige kompilieren des Codes in Maschinencode begünstigt wird. Nachteilig ist es jedoch, dass die Software zunächst überhaupt installiert werden muss. 
 
+\begin{table}[H]
+	\centering
+	\caption{Webapplikationsentwicklung im Vergleich \cite{TecArt-GmbH2019:online}}
+	\label{tab:spektrometer}
+	\begin{tabular}{l | p{5cm}|  p{5cm}}
+		\textbf{Kriterium} & \textbf{Webapplikation} & \textbf{Desktopapplikation}   \\ 
+		\hline 
+		Struktur & Modularer Aufbau & Meist als Gesamtpaket vertrieben \\
+		\hline 
+		Verfügbarkeit & Weltweit dank Internet, lokal eingeschränkt möglich & Nur bei lokaler Installation verfügbar \\ 
+		\hline 
+		Installation	& Nicht erforderlich & Erforderlich   \\ 
+		Speicher & Kein Zusätzlicher Speicher benöntigt & Installation benötigt Speicherplatz \\
+		\hline 
+		Updates & Live-Aktualisierung möglich & Teil- oder Neuinstallation notwendig \\		
+		\hline 
+		Teamarbeit & Zeitgleiches und schnelleres Arbeiten leicht möglich & Teamarbeit nur über Synchronisation möglich \\
+		\hline 
+	\end{tabular} 
+\end{table}
 
