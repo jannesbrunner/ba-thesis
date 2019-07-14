@@ -3,7 +3,6 @@ Anbieter
 Serverstandort: 
 Online Nutzung:
 Offline Nutzung:
-Lokalisierung:
 Betriebsart: Multi-User/Single-User
 Betriebsmodus: (Single/Set)
 Clients: 
