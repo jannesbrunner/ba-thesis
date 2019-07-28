@@ -1,0 +1,46 @@
+\part*{Anhang}
+\subsection*{Abschnitt: Funktionale Anforderungen}
+
+\begin{table}[h!]
+	\caption{Funktionale Anforderungen an die Projektsoftware}
+	\label{tab:funkanf}
+	\resizebox{\textwidth}{!}{%
+		% Please add the following required packages to your document preamble:
+		% \usepackage{booktabs}
+		% \usepackage[table,xcdraw]{xcolor}
+		% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+		\begin{tabular}{@{}cllc@{}}
+			
+			\toprule
+			\rowcolor[HTML]{FFFFFF} 
+			\textbf{ID} & \multicolumn{1}{c}{\cellcolor[HTML]{FFFFFF}\textbf{Name}} & \multicolumn{1}{c}{\cellcolor[HTML]{FFFFFF}\textbf{Beschreibung}}                                                                                                                                                                                                                                                                 & \textbf{Status} \\ \midrule
+			\rowcolor[HTML]{FFFFFF} 
+			F01         & Datenbankanbindung                                        & Es soll erfolgreich eine Anbindung an die Datenbank erfolgen                                                                                                                                                                                                                                                                      & OK              \\
+			\rowcolor[HTML]{EFEFEF} 
+			F02         & Datenbank Generierung                                     & \begin{tabular}[c]{@{}l@{}}Alle nötigen Modelle und Tabellen soll in der Datenbank\\ abgebildet werden und bei bedarf gänzlich neu generiert werden\end{tabular}                                                                                                                                                                  & OK              \\
+			\rowcolor[HTML]{FFFFFF} 
+			F03         & GET Requests                                              & \begin{tabular}[c]{@{}l@{}}Der Server soll in der Lage sein GET Requests entgegenzunehmen\\ und zu beantworten. Im Fehlerfall soll auch eine Antwort erfolgen.\end{tabular}                                                                                                                                                       & OK              \\
+			\rowcolor[HTML]{EFEFEF} 
+			F04         & POST Requests                                             & \begin{tabular}[c]{@{}l@{}}Der Server soll in der Lage sein POST Requests entgegenzunehmen\\ und zu beantworten. Im Fehlerfall soll auch eine Antwort erfolgen.\end{tabular}                                                                                                                                                      & OK              \\
+			\rowcolor[HTML]{FFFFFF} 
+			F05         & Login System                                              & \begin{tabular}[c]{@{}l@{}}Nutzende der Software in der Rolle als Lehrkraft oder Administrator\\ sollen in der Lage sein sich bei dem System mittels Authentifizierung\\ an- und abzumelden mittels HTTP-Session und Session-Cookies\end{tabular}                                                                                 & OK              \\
+			\rowcolor[HTML]{EFEFEF} 
+			F06         & MVC - Pattern                                             & \begin{tabular}[c]{@{}l@{}}Das Model-View-Controller Muster soll beim Datenfluss im Backend/\\ Lehrerbereich des Servers reflektiert und zum Einsatz kommen\end{tabular}                                                                                                                                                          & OK              \\
+			\rowcolor[HTML]{FFFFFF} 
+			F07         & WebSockets                                                & \begin{tabular}[c]{@{}l@{}}Bei der Ausführung von Lehreineheiten und den damit verbundenen\\ Unterrichtsmethoden soll die Kommunikation zwischen \\ Server und Web-Client über das WebSocket Protokoll erfolgen\end{tabular}                                                                                                      & OK              \\
+			\rowcolor[HTML]{EFEFEF} 
+			F08         & Drei Client Implementierung                               & \begin{tabular}[c]{@{}l@{}}Um die Software größtmöglichst flexibel einsetzen zu können, sollen\\ drei verschieden optimierte Web-Clients implementiert werden, genauer\\ einen für die ausführende Lehrkraft, einen für Studierende, eine für \\ Anzeigemedien, auf größere Darstellung optimiert im Unterrichtsraum\end{tabular} & OK              \\
+			\rowcolor[HTML]{FFFFFF} 
+			F09         & Administration                                            & \begin{tabular}[c]{@{}l@{}}Authentifizierte Nutzer wie Dozierende und Administratoren sollen \\ die Software verwalten können, dies umfasst u.A. das Anlegen und \\ Freischalten von Nutzenden und das Setzen der Werkseinstellungen\end{tabular}                                                                                 & OK              \\
+			\rowcolor[HTML]{EFEFEF} 
+			F10         & Absicherung                                               & \begin{tabular}[c]{@{}l@{}}Alle Routen die höhere Privilegien verlangen, sollen nur authentifizierten\\ Nutzenden zugänglich gemacht werden, dies betrifft vor allem F09 und\\ Besitzer abhängig erstellte Ressourcen\end{tabular}                                                                                                & OK              \\
+			\rowcolor[HTML]{FFFFFF} 
+			F11         & Ausführung von Lehreinheiten                              & \begin{tabular}[c]{@{}l@{}}Lehrkräften bzw. Dozierende soll es möglich sein zwei Typen von\\ interaktiven Unterrichtsmethoden mit Studierenden durchzuführen, \\ dies umfasst zunächst die Typen Brainstorming und Quiz\end{tabular}                                                                                              & OK              \\
+			\rowcolor[HTML]{EFEFEF} 
+			F12         & Einfacher Studierendenzugang                              & \begin{tabular}[c]{@{}l@{}}Studierende bzw. Schülerinnen und Schüler sollen über einen QR Code\\ vereinfacht Zugriff auf den Server erhalten, vorausgesetzt sie sind mit \\ dem gleichem Netzwerk wie der Server verbunden\end{tabular}                                                                                           & OK              \\
+			\rowcolor[HTML]{FFFFFF} 
+			F13         & Wifi/WLAN Hotspot                                         & \begin{tabular}[c]{@{}l@{}}Der Server soll ein eigenes WLAN Netzwerk bereitstellen können in \\ dem der Host-Computer des Servers als WLAN Access Point fungiert, \\ und verbundenen Clients automatisch eine IP-Adresse zuweist (DHCP)\end{tabular}                                                                              & N.I.*        \\ \bottomrule
+		\end{tabular}
+	}
+	\footnotesize * nicht implementiert
+\end{table}

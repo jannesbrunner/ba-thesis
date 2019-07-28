@@ -50,7 +50,7 @@ Das Zusatzmodule \texttt{connect-session-sequelize} ermöglicht eine einfache Ha
 
 Da zum Zeitpunkt der Recherche kein zu SQLite ähnliches und für den produktiven Einsatz bereites NoSQL Äquivalent gefunden werden konnte, fiel die Wahl auf SQLite. Die genannten Vorteile eines NoSQL Systems scheinen für die Anforderungen des zu entwickelenden Systems ohnehin nicht relevant, obgleich sogar ein Umstieg auf NoSQL Datenbkansystem möglich wäre, auch wenn dies mit einem etwas erhöhten Aufwand einhergeht, da dann auch der ORM gewechselt und die Modelle entsprechend angepasst werden müssten.  
 
-\subsubsection{Serverarchitekturdiagramm}\label{sec:serverarchitekt}
+\subsubsection{Server Architekturdiagramm}\label{sec:serverarchitekt}
 Schlussfolgernd lässt sich der finale Entwurf des Servers folgend visualisieren und wird in Kapitel \textbf{\ref{sec:implementierung} Implementierung} umgesetzt.
 
 \begin{figure}[H]
@@ -59,13 +59,14 @@ Schlussfolgernd lässt sich der finale Entwurf des Servers folgend visualisieren
 	\caption[Aufbau der geplanten Serverarchitektur]{Aufbau der geplanten Serverarchitektur}
 	\label{fig:server_diagram}
 \end{figure}
-\footnotesize{Hinweis: NodeJS Module aus der Sektion \textbf{Sonstige Module} wurden aus Gründen der Visualisierung in dieser Grafik nicht näher betrachtet. }
+\footnotesize \underline{Hinweis:} NodeJS Module aus der Sektion \textbf{Sonstige Module} wurden aus Gründen der Visualisierung in dieser Grafik nicht näher betrachtet.
 
+\normalsize 
 \subsection{Entwurf des Clients}\label{sec:clientkonzept}
 Wie zuvor erörtert, ist es vorgesehen drei verschiedene Clients zu implementieren, welche alle auf dem gleichen Prototyp basieren sollen, allerdings verschiedene Zwecke verfolgen. Dies sieht ein Webclient jeweils für \textbf{Lehrende/Dozierende}, \textbf{Schülerinnen und Schüler} und einen für \textbf{Großbildanzeigen} optimierten wie Projektoren o.Ä. vor. Zur Vereinfachung werden diese gemäß der vorherigen Reihenfolge \textbf{Teacher Client}, \textbf{Student Client} und \textbf{Presenter Client} in diesem und darauffolgendem Kapitel genannt.\\ \\ 
 
 \subsubsection{Gedanken zu UI}\label{sec:uientwurf}
-// TODO am CSS Tag schreiben!
+Da das Projekt als Web-Applikation implementiert werden soll, wird die UI gänzlich durch die Stylesheet-Sprache CSS beschrieben. Im Jahr 2018 wurden erstmals häufiger mobile Endgeräte wie Smartphones zur Internetnutzung herangezogen als der klassische Computer oder Laptop\cite{Rabe2019}. Viele Design-Frameworks setzen daher schon länger auf das Prinzip 'Mobile First'. Da die Applikation letztlich sowohl auf Computern und Smartphones aber auch Großbildgeräten angezeigt werden soll, bildet ein flexibles Web-Design-Framework als Basis, welches bereits viele relevante Web-Design Standards wie das o.g. 'Mobile First' berücksichtigt, ein solides Fundament in Sachen Usability und Design. Eines der populärsten dieser Art ist \textbf{Bootstrap}, welches zusammen mit einem frei erhältlichen Design-Theme von \url{https://freehtml5.co/} genutzt werden soll. Das gewählte Theme soll an die Applikation angepasst und teils für die Großbild Anzeige des Presenter Clients optimiert werden.  
 \subsubsection{Browserify}\label{sec:browserify}
 Um das Nutzen von Node.js Packages sowie damit verbundene \texttt{require()} Funktionalität auch auf der Clientseite zu ermöglichen, soll die JavaScript Bibliothek \textbf{Browserify} zum Einsatz kommen. Mit ihr können alle Node.js Packages, welche über den Node Package Manager in das Projekt hinzugefügt wurde im Webbrowser des Clients genutzt werden. Dazu bündelt die Bibliothek alle Module und stellt anschließend eine einzige JavaScript Datei zur Verfügung, die nur noch im HTML-Dokument eingebunden werden muss. Mithilfe der \texttt{require()} Funktionalität, welche von Node.js gestellt wird, kann der Code auch übersichtlicher in mehrere Dateien/Module aufgeteilt werden. Dies war ohne Aufwand auf der Browserseite nicht ohne weiteres möglich, ist aber durch die Einführung von Modulen seit ECMAScript\footnote{Der als ECMAScript (ECMA 262) standardisierte Sprachkern von JavaScript beschreibt eine dynamisch typisierte, objektorientierte, aber klassenlose Skriptsprache. (Wikipedia.org)} in Version 6  nun möglich. Oftmals wird aber aus Kompatibliltätsgründen  zu älteren Webbrowsern auf Lösungen wie Browserify oder auch Babel gesetzt. Letztere übersetzt den geschriebenen JavaScript Code so, dass er auch von älteren Webbrowsern interpretiert wird (auch Transpiler genannt). Sämtliche folglich genannten JavaScript Module resp. Bibliotheken sollen via Browserify in eine JavaScript Datei zusammengefasst werden und anschließend pro Client eingebunden werden. Das bringt den zusätzlichen Vorteil dass für jegliches, auf Browserseite eingesetztes JavaScript nur einen einzigen HTTP-Get Request benötigt, da wie erwähnt nur eine JavaScript Datei pro Client angefordert werden muss. 
 \subsubsection{JavaScript Lösungen}\label{sec:clientjs}
@@ -76,5 +77,15 @@ Von folgenden JavaScript Lösungen soll auf der Clientseite Gebrauch gemacht wer
 	\item \textbf{Zingchart}: Zur Visualisierung der Wörterwolke (WordCloud), welche bei der interaktiven Unterrichtsmethode Brainstorming zum Einsatz kommt, und sonstigen Diagrammen soll die auf diese Szenarien spezialisierte JavaScript Bibliothek ZingChart genutzt werden. Die Software ist in einer freien Version erhältlich, wobei lediglich ein kleines ZingChart Logo stets angezeigt werden muss\cite{zingchartpricing}.
 \end{itemize}
 
-\subsubsection{Lehrer - Bereich}\label{sec:lehrerbereich}
-\subsubsection{Schüler - Bereich}\label{sec:schuelerbereich}
+\subsubsection{Client Architekturdiagramm}\label{sec:serverarchitekt}
+Nachfolgend die umzusetzende Architektur der Client-Anwendung. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{bilder/client_architektur}
+	\caption[Aufbau der geplanten Client Architektur]{Aufbau der geplanten Client Architektur}
+	\label{fig:client_diagram}
+\end{figure}
+\footnotesize \underline{Hinweis:} Zum besseren Verständnis wurden die Rollen des Servers und der Nutzer ebenso dargestellt. Der Presenter Client nutzt in der Grafik ein Projektor. Dies ist eine Option und nicht zwingend von Nöten. Alle Clients können auf der gleichen Maschine ausgeführt werden (z.B. in unterschiedlichen Tabs eine Webbrowsers) als auch auf entfernten. 
+
+\normalsize

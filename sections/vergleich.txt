@@ -1,4 +1,4 @@
-		Namen der Anbieter....
+F		Namen der Anbieter....
 Anbieter
 Serverstandort: 
 Online Nutzung:
@@ -10,3 +10,29 @@ Registrierung:
 (Lehrer/Schüler)
 Unterstütze Unterrichtsmethoden: 
 
+
+
+Anforderungen 
+
+Funktional:
+- Datenbankanbindung
+- Erstellung der Datenbank
+- REaktion GET Requests
+- Reaktion POST Request
+- Login System Sessions
+- MVC Pattern
+- Socket Verbindungen
+- Einfach Client Konnektivität: QR
+- 3 Client Prinzip
+- Ausführen von Unterrichtsmethoden
+
+
+
+Nicht Funktional:
+- Erreichbarkeit: Offline im Intranet
+- Wartbarkeit: Anzeige von Fehlern
+- Nutzung von freier Software
+- Performanz: Ohne nenns. verzögerung
+- Portierbarkeit: OS Unabhängig
+- Usability: egal welches device
+- Sicherheit: PW speichern, HTTPS

@@ -74,6 +74,42 @@ sorting=none
 \captionsetup{tablewithin = section}
 \captionsetup{font=small, labelfont=bf}
 
+\usepackage{listings} % für code listings
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+
+\lstdefinelanguage{JavaScript}{
+	keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, const, let, if, in, while, do, else, case, break},
+	keywordstyle=\color{blue}\bfseries,
+	ndkeywords={class, export, boolean, throw, implements, import, this},
+	ndkeywordstyle=\color{darkgray}\bfseries,
+	identifierstyle=\color{black},
+	sensitive=false,
+	comment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	commentstyle=\color{purple}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	morestring=[b]',
+	morestring=[b]"
+}
+
+\lstset{
+	language=JavaScript,
+	backgroundcolor=\color{lightgray},
+	extendedchars=true,
+	basicstyle=\footnotesize\ttfamily,
+	showstringspaces=false,
+	showspaces=false,
+	numbers=left,
+	numberstyle=\footnotesize,
+	numbersep=9pt,
+	tabsize=2,
+	breaklines=true,
+	showtabs=false,
+	captionpos=b
+}
+
 %\usepackage{subfig}
 \usepackage{subcaption}
 \usepackage{longtable}% erlaubt Tabellen über mehrere Seiten
@@ -155,17 +191,16 @@ sorting=none
 			{\huge Entwicklung einer webbasierten Client-Server Anwendung zur Unterstützung von interaktiven Unterrichtsmethoden}\\
 			\end{doublespace}
 			\vspace{2cm}
-			
 			{\huge \bf Bachelorarbeit}\\
 			\vspace{0.4cm}
 			
-			{\large zur Erlangung des akademischen Grades\\ Bachelor\\ (B.-Sc.)\\an der HTW Berlin}\\
+			{\large zur Erlangung des akademischen Grades\\ Bachelor of Science \\ an der HTW Berlin}\\
 			
 			\vspace{1cm}
 			
 			{\Large \bf Hochschule für Technik und Wirtschaft Berlin}\\
 			{\large \bf Fachbereich Informatik, Kommunikation und Wirtschaft\\
-			Studiengang internationale Medieninformatik}\\
+			internationaler	Studiengang Medieninformatik}\\
 		
 			\vspace{1.5cm}
 			
@@ -244,10 +279,6 @@ sorting=none
 %\fancyfoot[C]{\thepage}
 
 
-\thispagestyle{empty}
-\input{sections/00selbststaendig}
-\newpage
-
 \input{sections/00Begriffe}
 \newpage
 
@@ -266,14 +297,15 @@ sorting=none
 \input{sections/05implementierung}
 \newpage
 
-\input{sections/06erprobung}
+
+\input{sections/06fazit}
 \newpage
 
-\input{sections/07fazit}
+\input{sections/07ausblick}
 \newpage
 
-\input{sections/08ausblick}
-\newpage
+
+
 
 
 %\fancyhead[L]{\textsl{\small \leftmark}}
@@ -292,18 +324,22 @@ sorting=none
 \listoffigures\newpage
 \addcontentsline{toc}{section}{Tabellenverzeichnis}
 \listoftables
-
+\addcontentsline{toc}{section}{Listingverzeichnis}
+\lstlistoflistings
 %\clearpage%\vspace*{-3cm}
-%\newpage
+\newpage
 
 \addcontentsline{toc}{part}{Anhang}
 
 \fancyhead[L]{\textsl{\small \leftmark \hspace{0.8cm}\rightmark}}
 
-%\appendix % Für Anhänge
-%\input{anhang/Zemente}
+\appendix
+\thispagestyle{empty}
+\input{anhang/funkanf}
 %\input{anhang/Nachmessung_Zemente}
 
-
+\newpage
+\thispagestyle{empty}
+\input{sections/00selbststaendig}
 
 \end{document}
