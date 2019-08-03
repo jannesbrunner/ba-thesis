@@ -33,6 +33,9 @@ sorting=none
 %\addbibresource{Bildquellen.bib}
 %%\bibliography{Masterarbeit.bib}
 %\usepackage{cite}
+\DefineBibliographyStrings{ngerman}{%
+	urlseen = {Abruf vom}
+}
 
 
 \usepackage[T1]{fontenc} %für europäischen ASCII-Code (mit Umlauten etc)
@@ -110,19 +113,31 @@ sorting=none
 	captionpos=b
 }
 
+\lstdefinestyle{tinyListing}{
+	language=Matlab,
+	numbers=left,
+	stepnumber=1,
+	numbersep=10pt,
+	tabsize=4,
+	showspaces=false,
+	showstringspaces=false
+}
+
 %\usepackage{subfig}
 \usepackage{subcaption}
 \usepackage{longtable}% erlaubt Tabellen über mehrere Seiten
 \usepackage{tabularx} %Tabellen können größer gemacht werden und und die Spalten sind flexibler
+\renewcommand\tabularxcolumn[1]{m{#1}}% for vertical centering text in X column
 \usepackage{booktabs} %definiert Befehle für Tabellen
 %\usepackage{booktabs-de}
 \usepackage{ltxtable} %vereinigt longtable und tabularx
+\usepackage{tabu} %verbesserte ltxtable ?
 \usepackage{colortbl}
 \usepackage{multirow}
 %\usepackage{multicolumn}
 \usepackage{rotating}
 %\usepackage{tablefootnote}
-
+%\usepackage{filecontents} % Es besteht die Möglichkeit eine ltxtable Tabelle direkt innerhalb des Dokumentes zu setzten.
 %\usepackage{tikz}
 
 \usepackage{array} %erweiterte Möglichkeiten für Tabellen und Spalten
@@ -213,7 +228,7 @@ sorting=none
 			\begin{table}[b]
 				\begin{center}
 					\begin{tabular}{ll}
-					Eingereicht am:& 29.07.2019\\
+					Eingereicht am:& 05.08.2019\\
 					Betreuender Hochschuldozent:& Prof. Dr. Gefei Zhang\\
 					Zweitgutachter: & Prof. Dr.-Ing. Kai Uwe Barthel\\
 					\end{tabular}
@@ -233,14 +248,15 @@ sorting=none
 %\clearpairofpagestyles
 
 \pagenumbering{roman}
-\setcounter{page}{10}
+\setcounter{page}{2}
 
+\thispagestyle{empty}
 \input{sections/00abstract}
 \newpage
 
 %\thispagestyle{empty}
 \cfoot{\pagemark}
-\tableofcontents 
+\tableofcontents
 \newpage
 
 \pagenumbering{arabic}
@@ -279,29 +295,32 @@ sorting=none
 %\fancyfoot[C]{\thepage}
 
 
-\input{sections/00Begriffe}
+\input{sections/00begriffe}
 \newpage
 
 \input{sections/01einfuehrung}
 \newpage
 
-\input{sections/02grundlagen}
+\input{sections/02zielsetzung}
 \newpage
 
-\input{sections/03Analyse}
+\input{sections/03grundlagen}
 \newpage
 
-\input{sections/04konzept}
+\input{sections/04Analyse}
 \newpage
 
-\input{sections/05implementierung}
+\input{sections/05konzept}
+\newpage
+
+\input{sections/06implementierung}
 \newpage
 
 
-\input{sections/06fazit}
+\input{sections/07fazit}
 \newpage
 
-\input{sections/07ausblick}
+\input{sections/08ausblick}
 \newpage
 
 
@@ -340,6 +359,6 @@ sorting=none
 
 \newpage
 \thispagestyle{empty}
-\input{sections/00selbststaendig}
-
+\input{sections/99selbststaendig}
+\thispagestyle{empty}
 \end{document}

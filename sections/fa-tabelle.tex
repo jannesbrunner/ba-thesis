@@ -1,0 +1,52 @@
+\begin{longtable}{llXc}
+ \caption{Funktionale Anforderungen an die Projektsoftware}
+ \label{tab:funkanf}
+  % Please add the following required packages to your document preamble:
+  % \usepackage{booktabs}
+  % \usepackage[table,xcdraw]{xcolor}
+  % If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+  \small
+  % Definition des ersten Tabellenkopfes auf der ersten Seite   
+   \toprule
+   \textbf{ID} & \textbf{Name} & \textbf{Beschreibung}                                                                                                                                                                                                                                                                 & \textbf{Status} \\ \midrule
+   \endfirsthead % Erster Kopf zu Ende
+   %  Definition des Tabellenkopfes auf den folgenden Seiten
+   \caption{Funktionale Anforderungen an die Projektsoftware}
+   \toprule
+   \textbf{ID} & \textbf{Name} & \textbf{Beschreibung}                                                                                                                                                                                                                                                                 & \textbf{Status} \\ \midrule
+   \endhead
+   Weiter auf der n{\"a}chste Seite
+   \endfoot
+   \hline
+   Vor dem endlastfoot: Tabelle zu Ende
+   \endlastfoot
+   % Ab hier kommt der Inhalt der Tabelle
+   \textbf{F01}         & Datenbankanbindung                                        & Es soll erfolgreich eine Anbindung an die Datenbank erfolgen                                                                                                                                                                                                                                                                      & OK \\
+   \rowcolor[HTML]{EFEFEF}
+   \textbf{F02}         & Datenbank Generierung                                     & Alle nötigen Modelle und Tabellen soll in der Datenbank abgebildet werden und bei bedarf gänzlich neu generiert werden                                                                                                                                                                  & OK              \\
+   \rowcolor[HTML]{FFFFFF}
+   \textbf{F03}         & GET Requests                                              & Der Server soll in der Lage sein GET Requests entgegenzunehmen und zu beantworten. Im Fehlerfall soll auch eine Antwort erfolgen.                                                                                                                                                      & OK              \\
+   \rowcolor[HTML]{EFEFEF}
+   \textbf{F04}         & POST Requests                                             & Der Server soll in der Lage sein POST Requests entgegenzunehmen und zu beantworten. Im Fehlerfall soll auch eine Antwort erfolgen.                                                                                                                                            & OK              \\
+   \rowcolor[HTML]{FFFFFF}
+   \textbf{F05}         & Login System                                              & Nutzende der Software in der Rolle als Lehrkraft oder Administrator sollen in der Lage sein sich bei dem System mittels Authentifizierung an- und abzumelden mittels HTTP-Session und Session-Cookies                                                                                 & OK              \\
+   \rowcolor[HTML]{EFEFEF}
+   \textbf{F06}         & MVC - Pattern                                             & Das Model-View-Controller Muster soll beim Datenfluss im Backend/Lehrerbereich des Servers reflektiert und zum Einsatz kommen                                                                                                                                                         & OK              \\
+   \rowcolor[HTML]{FFFFFF}
+   \textbf{F07}         & WebSockets                                                & Bei der Ausführung von Lehreineheiten und den damit verbundenen Unterrichtsmethoden soll die Kommunikation zwischen Server und Web-Client über das WebSocket Protokoll erfolgen                                                                                                & OK              \\
+   \rowcolor[HTML]{EFEFEF}
+   \textbf{F08}         & Drei Client Implementierung                               & Um die Software größtmöglichst flexibel einsetzen zu können, sollen drei verschieden optimierte Web-Clients implementiert werden, genauer einen für die ausführende Lehrkraft, einen für Studierende, eine für Anzeigemedien, auf größere Darstellung optimiert im Unterrichtsraum & OK              \\
+   \rowcolor[HTML]{FFFFFF}
+   \textbf{F09}         & Administration                                            & Authentifizierte Nutzer wie Dozierende und Administratoren sollen die Software verwalten können, dies umfasst u.A. das Anlegen und Freischalten von Nutzenden und das Setzen der Werkseinstellungen                                                                            & OK              \\
+   \rowcolor[HTML]{EFEFEF}
+   \textbf{F10}         & Absicherung                                               & Alle Routen die höhere Privilegien verlangen, sollen nur authentifizierten Nutzenden zugänglich gemacht werden, dies betrifft vor allem F09 und Besitzer abhängig erstellte Ressourcen                                                                                                & OK              \\
+   \rowcolor[HTML]{FFFFFF}
+   \textbf{F11}         & Ausführung von Lehreinheiten                              & Lehrkräften bzw. Dozierende soll es möglich sein zwei Typen von interaktiven Unterrichtsmethoden mit Studierenden durchzuführen, dies umfasst zunächst die Typen Brainstorming und Quiz                                                                                          & OK              \\
+   \rowcolor[HTML]{EFEFEF}
+   \textbf{F12}         & Einfacher Studierendenzugang                              & Studierende bzw. Schülerinnen und Schüler sollen über einen QR Code vereinfacht Zugriff auf den Server erhalten, vorausgesetzt sie sind mit dem gleichem Netzwerk wie der Server verbunden                                                                                     & OK              \\
+   \rowcolor[HTML]{FFFFFF}
+   \textbf{F13}         & Wifi/WLAN Hotspot                                         & Der Server soll ein eigenes WLAN Netzwerk bereitstellen können in dem der Host-Computer des Servers als WLAN Access Point fungiert, und verbundenen Clients automatisch eine IP-Adresse zuweist (DHCP)                                                                             & N.I.*        \\ \bottomrule
+ 
+ 
+ \footnotesize * nicht implementiert
+\end{longtable}

@@ -1,0 +1,11 @@
+\section{Ausblick}\label{sec:ausblick}
+%electron!
+%  Eine hier angesetzte Refaktorierung ist vuejs und socketIO
+% REST statt Sockets
+% 
+\subsection{Optimierungspunkte der Software}\label{sec:opti}
+Der Nachrichtenaustausch, welcher über das \emph{WebSocket} Protokoll via \emph{Socket.IO} realisiert ist, sollte mehr vereinheitlicht werden. Grundsätzlich lassen sich jede Art von \emph{JavaScript} Daten übertragen; ein strengeres Konzept kann hier das Verständnis für andere Entwickler fördern und den Code sauberer halten. Gerade der Ausführungscode der interaktiven Unterrichtsmethoden könnte noch besser gekapselt und noch sinnvoller aufgeteilt werden, auch in Hinblick auf die Daten, welche zwischen Server und Client ausgetauscht werden. Der Installationsprozess könnte ggf. noch automatisierter erfolgen und so wenig Technik affinen Nutzenden die Installation erleichtern.   
+Der Code der Web-Clients, welcher im Webbrowser ausgeführt wird, kann mit mehr Kenntnissen über die Entwicklung mit \emph{Vue.js} und \emph{Socket.IO} optimiert werden. 
+\subsection{Anknüpfende Ansätze}\label{sec:ansatze}
+Das Projekt soll zukünftig weiterhin ausgebaut werden. Während der Entwicklung kamen immer wieder Ideen für weitere Funktionen auf, welche aber aus Gründen der Priorität nicht implementiert worden sind oder nur als Konzept vorlagen. Dies wären z.B. Funktionen, die den Dozierenden noch intensiver während des Unterrichts unterstützen oder das Schreiben einer API, um die Software an andere Systeme anbinden zu können. Zum Zeitpunkt des Abschlusses des Projekts kann eine Lehrkraft ein Lehreinheit anlegen, welche eine Unterrichtsmethode (Brainstorming oder Quiz) beinhalten kann. Die Umsetzung weiterer Unterrichtsmethoden wäre wünschenswert. Ebenso die Option, dass eine Lehreinheit mehrere Unterrichtsmethoden beinhalten kann. Ein weiteres Vorhaben wäre es, die Software in einem \emph{Fork} nach dem REST-Design aufzubauen und die Kommunikation dementsprechend umzugestalten, um anschließend zu vergleichen, welche Vorgehensweise entsprechende Vor- und Nachteile mit sich bringt. \\ Die Entwicklung einer Desktop-Applikation wäre dank der 
+\emph{Node.js} Basis des Projekts mit dem Framework \emph{Electron} realisierbar.

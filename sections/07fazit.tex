@@ -1,0 +1,32 @@
+ \section{Fazit}\label{sec:auswertung}
+In diesem vorletzten Kapitel der Arbeit wird die implementierte Software als Ergebnis mit der ursprünglichen Zielsetzung verglichen. Anschließend werden gesammelte Erfahrungen, die mit der Umsetzung des Projekts einhergingen, reflektiert. 
+Im letzten Kapitel {\ref{sec:ausblick} Ausblick} wird auf die Zukunft des Projektes näher eingegangen sowie über einzelne Bestandteile des Projekts hinsichtlich Optimierung gesondert diskutiert.
+
+\subsection{Zusammenfassung der Ergebnisse}\label{sec:umvsplan}
+An Schulen bedarf es trotz der künftigen finanziellen Unterstützung durch den \emph{DigitalPakt Schule} an kostengünstigen und einfache digitalen Lösungen, damit das Geld an den richtigen Stellen sinnvoll eingesetzt werden kann.
+
+Das Konzept einer kostengünstigen, auf Webtechnologien basierenden Softwarelösung zur Unterstützung von interaktiven Unterrichtsmethoden konnte erfolgreich umgesetzt werden.\\
+ 
+Die entwickelte Serversoftware ist flexibel auf verschiedenen Betriebssystemen und unterschiedlicher Netzwerk-Infrastruktur einsetzbar. Dabei ist ein Offline-Verwendung im Intranet möglich und es müssen keinerlei Ressourcen aus dem Internet geladen werden. Ein Betrieb im Internet mit verschlüsselter Kommunikation ist im Bedarfsfall möglich. Diese kann mit wenigen Schritten eingerichtet werden. 
+\\ \\
+Der Betrieb auf dem Einplantinencomputer \emph{Raspberry Pi 3} konnte erfolgreich getestet werden und die Hardwareanforderungen an das Server-System gering gehalten werden, was einem niedrigen Anschaffungspreis zur Folge hat.  
+
+Nutzende können die Server-Software mit wenig Aufwand installieren, es ist
+lediglich die \emph{JavaScript}-Laufzeitumgebung \emph{Node.js} einzurichten. Als Client kann jeder moderne Webbrowser auf mobilen und stationären Geräten genutzt werden. 
+
+Es konnten erfolgreich drei Webbrowser-Client Lösungen für Lehrende, Teilnehmende und Anzeigeräte in Unterrichtsräumen (Projektoren, digitale Tafeln, etc.) implementiert werden. 
+Diese können je nach Situation und Anforderung auf unterschiedlichen Geräten ausgeführt werden, wobei sich die Benutzeroberfläche auf die verwendete Bildschirmgröße adaptiert. \\ 
+
+Eine Lehrkraft kann sich registrieren, Lehreinheiten anlegen, diese ausführen und den Server grundlegend administrieren. Die zwei Unterrichtsmethoden Brainstorming und Quiz wurden erfolgreich  umgesetzt und teilnehmende Schülerinnen und Schüler können an diesen partizipieren. Anschließend besteht die Möglichkeit Ergebnisse auszuwerten. Der Server kann mehrere Nutzer und ausgeführte Unterrichtseinheiten gleichzeitig bedienen. Die Benutzeroberfläche wurde simple gehalten, damit auch weniger technisch versierte Nutzende  
+die Software einsetzen können. 
+Eine Lösung zur Generierung eines autarken WLANs konnte nicht zufriedenstellend gefunden werden, dafür wurden alternative Lösungen, wie das Nutzen eines Smartphones als WLAN-Zugangspunkt, ausgearbeitet. \\ 
+
+Die Anwendung läuft stabil und neuste Spracheigenschaften der Programmiersprache \emph{JavaScript} nach Spezifikation \emph{ECMAScript} 2015, 2016 und 2017 wurden erfolgreich im Quellcode eingesetzt.
+
+\subsection{Erfahrungsauswertung}\label{sec:erfahrungen}
+Die Auseinandersetzung mit Unterrichtsmethoden und der Digitalisierung an 
+Schulen war interessant und es konnte ein besseres Verständnis für damit verbundene Probleme entwickelt werden. \\ 
+
+Durch den Implementierungsteil der Arbeit wurden vielerlei Erfahrungen hinsichtlich der Entwicklung eines verteilten Systems in Form eine Webanwendung gesammelt. Insbesondere die gewonnen Kenntnisse im Umgang mit den Frameworks \emph{Node.js}, \emph{Express} und \emph{Socket.IO} waren lehrreich und der erlangte Wissensstand kann als Basiswissen hinsichtlich vielerlei Arten von Projekten in Zukunft genutzt werden. Auf der Client Seite war der Einblick in die Arbeitsweise des Frontend-Webframework \emph{Vue.js} interessant. Das Vorwissen über die Konkurrenten \emph{Angular} und \emph{React} war hilfreich, wurde jedoch um vielerlei neue Ansätze ergänzt.
+Die Arbeitsweise des \emph{WebSocket} Protokolls wurde gelernt und mit der \emph{JavaScript} Bibliothek \emph{Socket.IO} erfolgreich eingesetzt.
+Die neuen Funktionen nach Spezifikation \emph{ECMAScript} 2015, 2016 und 2017 des Sprachkerns der Programmiersprache \emph{JavaScript} wurde verinnerlicht und das Wissen um die Sprache intensiviert.     
